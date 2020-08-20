@@ -1,0 +1,21 @@
+{%extends 'schools/base.html' %}
+
+{%block title_block %} <title>Authorized User</title> {%endblock%}
+
+{%block body_block %}
+<br>
+<div class='container'>
+    <div class="jumbotron">
+<form method="post">
+    {%csrf_token%}
+    <label for="username">User Name: </label>
+    <input type="text" name="username">
+    <label for="password"> Password: </label>
+    <input type="password" name="password">
+    <input class ='class="btn btn-primary 'type="submit" value="Login">
+    
+</form>
+</div>
+</div>
+
+{%endblock%}

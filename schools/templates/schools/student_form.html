@@ -1,0 +1,29 @@
+{%extends 'schools/base.html'%}
+{% block title_block %}
+<title>Add Student</title>
+{%endblock%}
+
+{%block body_block %}
+<div class="container">
+    <div class="jumbotron">
+
+        <h1>
+            {% if not form.instance.pk %}
+                Add Student
+            {%else%}
+                Update Student
+            {%endif%}
+            </h1>
+            <form method="post">
+                {%csrf_token%}
+                {{form.as_p}}
+                <input type="submit" class="btn btn-primary" value="Submit">
+            </form>
+            
+            
+    </div>
+</div>
+
+
+
+{%endblock%}

@@ -1,0 +1,2 @@
+student pk like this :student_pk
+url(r'^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/$', views.topic_posts, name='topic_posts'),

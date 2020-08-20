@@ -1,0 +1,20 @@
+{%extends 'schools/base.html'%}
+    {% block title_block %}
+    <title>{{school_detail}} Delete </title>
+    {%endblock%}
+
+{%block body_block %}
+<div class="container">
+<div class="jumbotron jumbotron-fluid"> 
+    <h1> Delete {{school.name}}</h1><br>
+    <form  method="post">
+    {%csrf_token%}
+    <input type="submit" class="btn btn-danger" value="Delete">&nbsp;
+    <button type="button" class="btn btn-secondary"><a href="{% url 'schools:detail' pk=school.pk %}"> Cancel</a></button>
+    </form>
+</div>
+
+
+</div>
+
+{%endblock%}

@@ -1,0 +1,26 @@
+{%extends 'schools/base.html'%}
+{% block title_block %}
+<title>{{std_detail}}</title>
+{%endblock%}
+
+{%block body_block %}
+<div class="container"> <div class='jumbotron'>
+        {%if std_detail %}
+        <h1> Name: {{std_detail.name}}</h1>
+        <h1>Age:   {{std_detail.age}}</h1>
+        <h1>School: {{std_detail.school}}</h1>
+        {%endif%}
+        {%if user.is_authenticated %}
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="btn btn-warning">             
+            <a href="{% url 'schools:std_update' pk=std_detail.pk %}">Update Student</a>
+        </button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-danger">
+            <a href="{% url 'schools:std_delete' pk=std_detail.pk %}">Delete Student</a>
+        </button>
+        <br>
+        {%endif%}
+    </div></div>
+
+    
+{%endblock%}
